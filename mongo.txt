@@ -1,0 +1,803 @@
+Microsoft Windows [Version 10.0.19044.1645]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ASUS>mongo
+MongoDB shell version v5.0.7
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("a4cb4576-438d-406d-bafa-bde6f916fd68") }
+MongoDB server version: 5.0.7
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-04-17T22:46:50.061+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+masai   0.000GB
+> use masaiaasignment1
+switched to db masaiaasignment1
+> show collections
+> db.createCollection("user")
+{ "ok" : 1 }
+> db.createCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "1.0.2.2","age": "21"})
+uncaught exception: TypeError: db.createCollection(...).insert is not a function :
+@(shell):1:1
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "1.0.2.2","age": "21"})
+WriteResult({ "nInserted" : 1 })
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> db.getCollection("user").find({})
+{ "_id" : ObjectId("625d410af4b7915aa69458e1"), "first_name" : "vikalp", "lastname" : "varshney", "gender" : "male", "IP_address" : "1.0.2.2", "age" : "21" }
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d410af4b7915aa69458e1"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "1.0.2.2",
+        "age" : "21"
+}
+> db.getCollection("user").insert({"first_name": "aman","lastname": "varshney","gender": "male","IP_address": "1.0.3.3","age": "22"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "nikhil","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "bis","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d410af4b7915aa69458e1"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "1.0.2.2",
+        "age" : "21"
+}
+{
+        "_id" : ObjectId("625d419bf4b7915aa69458e2"),
+        "first_name" : "aman",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "1.0.3.3",
+        "age" : "22"
+}
+{
+        "_id" : ObjectId("625d41b8f4b7915aa69458e3"),
+        "first_name" : "nikhil",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d41c8f4b7915aa69458e4"),
+        "first_name" : "bis",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d41d0f4b7915aa69458e5"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+  db.getCollecti^C("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+byeb.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+{ db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>tion("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+C:\Users\ASUS>mongo
+MongoDB shell version v5.0.7
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("d0a5dbb2-1862-4889-9a32-ef956e96c0af") }
+MongoDB server version: 5.0.7
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-04-17T22:46:50.061+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show dbs
+admin             0.000GB
+config            0.000GB
+local             0.000GB
+masai             0.000GB
+masaiaasignment1  0.000GB
+test              0.000GB
+> cd masaiaasigment1
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:3
+> show collection
+uncaught exception: Error: don't know how to show [collection] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "shalesh","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d42d30702a03b8bef81c7"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43120702a03b8bef81c8"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43150702a03b8bef81c9"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43160702a03b8bef81ca"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43170702a03b8bef81cb"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d42d30702a03b8bef81c7"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43120702a03b8bef81c8"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43150702a03b8bef81c9"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43160702a03b8bef81ca"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43170702a03b8bef81cb"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432c0702a03b8bef81cc"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432f0702a03b8bef81cd"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43300702a03b8bef81ce"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43310702a03b8bef81cf"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43320702a03b8bef81d0"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").insert({"first_name": "vikalp","lastname": "varshney","gender": "male","IP_address": "3.0.3.3","age": "32"})
+WriteResult({ "nInserted" : 1 })
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d42d30702a03b8bef81c7"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43120702a03b8bef81c8"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43150702a03b8bef81c9"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43160702a03b8bef81ca"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43170702a03b8bef81cb"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432c0702a03b8bef81cc"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432f0702a03b8bef81cd"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43300702a03b8bef81ce"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43310702a03b8bef81cf"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43320702a03b8bef81d0"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43560702a03b8bef81d1"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43570702a03b8bef81d2"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+> db.getCollection("user").update({"lastname":"varshney"},{$set: {lastname: "gupta"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d42d30702a03b8bef81c7"),
+        "first_name" : "shalesh",
+        "lastname" : "gupta",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43120702a03b8bef81c8"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43150702a03b8bef81c9"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43160702a03b8bef81ca"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43170702a03b8bef81cb"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432c0702a03b8bef81cc"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432f0702a03b8bef81cd"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43300702a03b8bef81ce"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43310702a03b8bef81cf"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43320702a03b8bef81d0"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43560702a03b8bef81d1"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43570702a03b8bef81d2"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+> db.getCollection("user").remove({"lastname": "gupta"}
+... db.getCollection("user").find({}).pretty()
+...
+... ^C
+
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d42d30702a03b8bef81c7"),
+        "first_name" : "shalesh",
+        "lastname" : "gupta",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43120702a03b8bef81c8"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43150702a03b8bef81c9"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43160702a03b8bef81ca"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43170702a03b8bef81cb"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432c0702a03b8bef81cc"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432f0702a03b8bef81cd"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43300702a03b8bef81ce"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43310702a03b8bef81cf"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43320702a03b8bef81d0"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43560702a03b8bef81d1"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43570702a03b8bef81d2"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+> db.getCollection("user").remove({"lastname": "gupta"})
+WriteResult({ "nRemoved" : 1 })
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d43120702a03b8bef81c8"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43150702a03b8bef81c9"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43160702a03b8bef81ca"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43170702a03b8bef81cb"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432c0702a03b8bef81cc"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432f0702a03b8bef81cd"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43300702a03b8bef81ce"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43310702a03b8bef81cf"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43320702a03b8bef81d0"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43560702a03b8bef81d1"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43570702a03b8bef81d2"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+> db.getCollection("user").update({"lastname":"varshney"},{$set: {lastname: "gupta"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.getCollection("user").update({"lastname":"varshney"},{$set: {lastname: "gupta"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.getCollection("user").update({"lastname":"varshney"},{$set: {lastname: "gupta"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.getCollection("user").find({}).pretty()
+{
+        "_id" : ObjectId("625d43120702a03b8bef81c8"),
+        "first_name" : "shalesh",
+        "lastname" : "gupta",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43150702a03b8bef81c9"),
+        "first_name" : "shalesh",
+        "lastname" : "gupta",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43160702a03b8bef81ca"),
+        "first_name" : "shalesh",
+        "lastname" : "gupta",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43170702a03b8bef81cb"),
+        "first_name" : "shalesh",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432c0702a03b8bef81cc"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d432f0702a03b8bef81cd"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43300702a03b8bef81ce"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43310702a03b8bef81cf"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43320702a03b8bef81d0"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43560702a03b8bef81d1"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
+{
+        "_id" : ObjectId("625d43570702a03b8bef81d2"),
+        "first_name" : "vikalp",
+        "lastname" : "varshney",
+        "gender" : "male",
+        "IP_address" : "3.0.3.3",
+        "age" : "32"
+}
